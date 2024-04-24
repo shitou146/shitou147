@@ -1,0 +1,79 @@
+
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width , initial-scale=1">
+  <!-- 
+   增加这句后，可以看到浏览器的DevTools面板的模拟移动设备状态的变化
+  -->
+  <style>
+    body{
+      font-size: 26px;
+      text-align: center;
+    }
+    header{
+      border: 2px solid blue;
+      height: 10%;
+      background-color: blue;
+      color:yellow;
+    }
+
+    main{
+      height: 75%;
+      background-image: url(../lesson/CS.jpg);
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center;
+    }
+    nav{
+      border: 2px solid blue;
+      height: 5%;
+    }
+
+    footer{
+      border: 2px solid blue;
+      height: 10%;
+      background-color: black;
+      color: white;
+    }
+    p#book{
+        font-size: 1.8em;
+        letter-spacing: 0.2em;
+    }
+    button{
+        font-size: 1.2em;
+        margin-right: 1.2em;
+    }
+
+  </style>
+  <title>Welcome to myCTApp</title>
+ </head> 
+ <body>
+  <header>
+    <p id="book">
+        剑桥雅思系列课程@liusheng
+    </p>
+  </header>
+  <nav>
+    <button>导航1</button>
+    <button>导航1</button>
+    <button>导航1</button>
+  </nav>
+   <main>
+    	
+   </main>
+  <footer>
+    <p id="statusInfo">
+        CopyRight from 刘盛 江西科技师范大学 2022--2025
+    </p> 
+  </footer> 
+  <script>
+    var UI ={};
+    UI.deviceWidth =window.innerWidth;
+    UI.deviceHeight =window.innerHeight;
+    document.body.style.height= UI.deviceHeight + 'px';
+    document.body.style.fontSize=UI.deviceWidth/80+'px';
+  </script>
+ </body>
+</html>
