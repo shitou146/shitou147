@@ -36,7 +36,7 @@
   }
 
   footer{
-    border: 3px solid rgb(0, 77, 128);
+    border: 3px solid green;
     height:10%;
     font-size: 0.7em;
   } 
@@ -60,6 +60,8 @@
     background-color: blanchedalmond;
     left:7% ;
     top: 7% ;
+    background-image: url("../lesson/CS.jpg");
+    background-size: cover;
   }
   
 </style>
@@ -67,12 +69,12 @@
 <body >
   <header>
     <p id="book">
-      剑桥雅思系列课程@liusheng
+     《WebAppUI设计开发》
     </p>
    </header>
   <nav>
-   <button>向前</button>
-   <button>向后</button>
+   <button id="prev">向前</button>
+   <button id="next">向后</button>
    <button>其他</button>
   </nav>
  
@@ -86,7 +88,7 @@
 
   <footer> 
    
-    CopyRight from 刘盛 江西科技师范大学 2022--2025
+	CopyRight 刘盛 江西科技师范大学 2024--2025
 
   </footer> 
   <div id="aid">
@@ -165,6 +167,11 @@ $("bookface").addEventListener("mousemove",function(ev){
   } 
 
 });
+$("body").addEventListener("keypress",function(ev){
+    let k = ev.key;
+    let c = ev.keyCode;
+    $("keyboard").textContent = "您的按键 ：" + k + " ，"+ "字符编码 ：" + c;
+});
 
 
   function $(ele){
@@ -185,6 +192,42 @@ $("bookface").addEventListener("mousemove",function(ev){
             }
           }
        } //end of $
+    var myDiv = document.getElementById('bookface');
+    var images = [
+        "../lesson/back.jpg",
+        "../lesson/CS.jpg",
+        "../lesson/CSS.jpg",
+        "../lesson/CT.jpg",
+        "../lesson/Git.jpg",
+        "../lesson/internet.jpg",
+        "../lesson/javaScript.jpg",
+        "../lesson/learnCSS.jpg",
+        "../lesson/linuxCMD.jpg",
+        "../lesson/STEM.jpg",
+        "../lesson/ted.jpg",
+        "../lesson/UML.jpg",
+        "../lesson/videos.jpg",
+        "../lesson/webProgramming.jpg",
+        "../myface/myFace1.jpg",
+        "../myface/myFace2.jpg",
+        "../myface/myFace3.jpg",
+        "../myface/myFace4.jpg",
+        "../myface/myFace5.jpg"
+    ];
+    //当前位置
+    var currentImageIndex = 0;
+
+    document.getElementById("next").onclick = function () {
+        currentImageIndex++;
+        if (currentImageIndex == images.length) currentImageIndex = 0;
+        myDiv.style.backgroundImage = 'url(' + images[currentImageIndex] + ')';
+    };
+    document.getElementById("prev").onclick = function () {
+        currentImageIndex--;
+        if (currentImageIndex == -1)currentImageIndex = images.length - 1;
+        myDiv.style.backgroundImage = 'url(' + images[currentImageIndex] + ')';
+     
+    };
 
  </script>
  </body>
